@@ -23,7 +23,7 @@ router.post("/", createAccount);
 router.delete("/:accountId", deleteAccount);
 
 //Update Account
-router.put("/", updateAccount);
+router.put("/:accountId", updateAccount);
 
 //Bonus: Create a route that retrieve a single account by the username of the owner.
 // router.get("/", getOneAccount);
