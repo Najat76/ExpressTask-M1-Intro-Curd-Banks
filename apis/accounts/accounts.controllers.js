@@ -39,14 +39,14 @@ exports.updateAccount = (req, res) => {
 };
 
 //Bonus: Create a route that retrieve a single account by the username of the owner.
-// exports.getOneAccount = (req, res) => {
-//   const { AccountUsername } = req.params;
-//   const account = accounts.find((acc) => accountUsername == acc.username);
-//   return res.status(200).json(account);
-//   if (!account) {
-//     return res.status(404).json({ msg: "Account not found" });
-//   }
-// });
+exports.getOneAccount = (req, res) => {
+  const { accountId } = req.params;
+  const account = accounts.find((acc) => accountId == acc.id);
+  return res.status(200).json(account);
+  if (!account) {
+    return res.status(404).json({ msg: "Account not found" });
+  }
+};
 
 // module.exports = {
 //   getAllAcoounts,

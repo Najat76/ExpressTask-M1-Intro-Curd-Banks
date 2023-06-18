@@ -7,11 +7,8 @@ const {
   deleteAccount,
   updateAccount,
   getOneAccount,
-} = require("./apis/accounts/accounts.controllers");
+} = require("./accounts.controllers");
 let accounts = require("../../accounts"); // i need accounts.js
-
-// middleware that is specific to this router
-router.use();
 
 //Fetch Accounts (get all accounts)
 router.get("/", getAllAcoounts);
@@ -26,5 +23,5 @@ router.delete("/:accountId", deleteAccount);
 router.put("/:accountId", updateAccount);
 
 //Bonus: Create a route that retrieve a single account by the username of the owner.
-// router.get("/", getOneAccount);
+router.get("/:accountId", getOneAccount);
 module.exports = router;
